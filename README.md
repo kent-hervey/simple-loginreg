@@ -1,6 +1,13 @@
-# Products and Customers
+# Simple Spring Boot Registration login
 
-Products and Customers is a simple web application that manages the products a vendor or distributor has under use by customers, and also manages the customers using those products
+Products and Customers is a simple web application serving as a demo and reference for login registration not using Spring Security
+
+Attributes:  
+
+  * MySQL database with one table/model.class file
+  * JPA/Tomcat/JDK 1.8/JbCrypt with hashed passwords
+  * Session tracks logged in user
+
 
 # Installation
 This is a Maven/Spring Boot project with default WAR settings
@@ -13,48 +20,22 @@ Spring Boot will populate your MySQL file.  Just create the file and if differen
 
 # Usage
 
-Vendors/distributors can track their customers by product, and product by customers.  
-
-To start, in the Product side, add the various products that are in use.  Fields are:  
-Bullet list:
-
-  * Name
-  * Model
-  * List Price
-  * Description
-
-Next, on the Customer side, add the various customers.  Fields are:
-Bullet list:
-  * Name (Corporate)
-  * Contact Name
-  * Contact Email
-  * Location
-
-Next, the relationship between customers and products can be populated on either side.  This shows which customers hava a product and which products are in use by a customer.  These fields are:
-Bullet list:
-  * Purchase Date
-  * Serial Number
-
+  * View list of all users whether logged in or not
+  * Logged in user can modify his/her data
+  * Register/login/logout
 
 
 # Selected Screenshots:
 
 ![Image](readmeimages/home.png "Home Page")  
-![Image](readmeimages/customers.png "Customers Overview")  
-![Image](readmeimages/products.png "Products Overview")  
-![Image](readmeimages/customer.png "Detail One Customer")  
-![Image](readmeimages/product.png "Detail One Product")  
-![Image](readmeimages/newproduct.png "Create New Product")  
-
-
 
 
 
 # Potential Future Features:
-Bullet list:
-  * Added form input flexibility
-  * API interface
-  * Search, sort, or pagination to accommodate long lists
+  * Add login history table and enable its view
+  * API client based on user...maybe user's weather
+  * User can store/leave messages for other logged in users to view
+
 
 
 
