@@ -20,7 +20,7 @@
 				<div class="form-group">
 					<h1>Edit data for User with Emails: ${user.email} ${user.getId()} ${user.userLocation} </h1>
 					<p class="bad">${registrationError}</p>
-					<form:form action="/users2/${user.getId()}/update" method="put"   modelAttribute="user">
+					<form:form action="/users2/${user.getId()}/update" method="post"   modelAttribute="user">
 						<input type="hidden" name="_method" value="put">
 						<div class="row">
 							<form:errors class="bad" path="userName"/>
