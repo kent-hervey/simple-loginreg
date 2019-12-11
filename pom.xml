@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>LoginRegSimple</name>
-	<description>Products Customers adapted from Products Categories</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -80,4 +79,5 @@
 	</build>
 
 
+	<description>Simple Login Register Spring Boot project</description>
 </project>
