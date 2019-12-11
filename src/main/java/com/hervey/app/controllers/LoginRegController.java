@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -133,20 +134,21 @@ public class LoginRegController {
 		return "editUser.jsp";
 	}
 	
-	@PostMapping("/users2/{id}")
+	@PutMapping("/users2/{id}")
 	public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult result, @PathVariable("id") Long userId, HttpSession session) {
 		System.out.println("id passed in as PathVariable is;  " + userId);
-		User jpaUser = apiService.fetchById(userId);
-		System.out.println("jpaUser toString:  " + jpaUser.toString());
+		
+		User userFromDB = apiService.fetchById(userId);
+		System.out.println("jpaUser toString:  " + userFromDB.toString());
 		System.out.println("user toString:  " + user.toString());
 		
-		jpaUser.setGoldStatus(user.getGoldStatus());
-		jpaUser.setUserName(user.getUserName());
-		jpaUser.setUserLocation(user.getUserLocation());
-		jpaUser.setPersonalDescription(user.getPersonalDescription());
+		userFromDB.setGoldStatus(user.getGoldStatus());
+		userFromDB.setUserName(user.getUserName());
+		userFromDB.setUserLocation(user.getUserLocation());
+		userFromDB.setPersonalDescription(user.getPersonalDescription());
 		
-		System.out.println("UPDATED jpaUser toString:  " + jpaUser.toString());
-		apiService.userSave(jpaUser);
+		System.out.println("UPDATED jpaUser toString:  " + userFromDB.toString());
+		apiService.userSave(userFromDB);
 		return "redirect:/userList";
 	}
 	

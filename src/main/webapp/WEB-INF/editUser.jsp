@@ -21,7 +21,7 @@
 					<h1>Edit data for User with Emails: ${user.email} ${user.getId()} ${user.userLocation} </h1>
 					<p class="bad">${registrationError}</p>
 					<form:form method="POST" action="/users2/${user.getId()}" modelAttribute="user">
-						
+						<input type="hidden" name="_method" value="put">
 						<div class="row">
 							<form:errors class="bad" path="userName"/>
 							<div class="col-25">
