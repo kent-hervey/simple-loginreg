@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -134,7 +135,8 @@ public class LoginRegController {
 		return "editUser.jsp";
 	}
 	
-	@PutMapping("/users2/{id}/update")
+	@RequestMapping(value="/users2/{id}/update", method=RequestMethod.PUT)
+	//@PutMapping("/users2/{id}/update")
 	public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult result, @PathVariable("id") Long userId, HttpSession session) {
 		System.out.println("id passed in as PathVariable is;  " + userId);
 		
