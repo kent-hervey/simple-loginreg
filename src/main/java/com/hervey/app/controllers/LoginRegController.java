@@ -133,7 +133,7 @@ public class LoginRegController {
 		return "editUser.jsp";
 	}
 	
-	@PostMapping("/users2/{id}")
+	@PostMapping("/users/{id}/update")
 	public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult result, @PathVariable("id") Long userId, HttpSession session) {
 		System.out.println("id passed in as PathVariable is;  " + userId);
 		User jpaUser = apiService.fetchById(userId);
