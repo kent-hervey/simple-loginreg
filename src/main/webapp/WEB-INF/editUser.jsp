@@ -15,6 +15,7 @@
 </head>
 <body>
 	<div class="container">
+		<h5><a href="/">Back to Dashboard</a></h5>
 		<div class="row"> <!-- row covers both left Register and right Login -->
 			<div class="col-90"><!-- left side Register -->
 				<div class="form-group">
