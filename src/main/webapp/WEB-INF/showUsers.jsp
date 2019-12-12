@@ -25,13 +25,14 @@
 		<thead>
 			<tr>
 				<th>Row</th>
-				<th>User Number</th>
+				<th>User #</th>
 				<th>User Name</th>
 				<th>Email</th>
 				<th>Gold status</th>
+				<th>Location</th>
 				<th>Personal Description</th>
 				<th>Join Date</th>
-				<th>Number Logins</th>
+				<th># Logins</th>
 			
 		
 		
@@ -44,7 +45,8 @@
 				<td>${user.getId() }</td>
 				<td>${user.getUserName() }
 				<td>${user.getEmail()}</td> 
-				<td><c:out value="${user.getGoldStatus() ? 'Yes': 'No'}"/></td>
+				<td>${user.getGoldStatus() ? 'Yes': 'No'}</td>
+				<td>${user.getUserLocation()}</td>
 				<td>${user.getPersonalDescription()}
 				<td><fmt:formatDate  type="date" dateStyle="short" value="${user.getCreatedAt()}" />
 				<td>${user.getNumLogins()}

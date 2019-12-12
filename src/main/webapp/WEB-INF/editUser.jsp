@@ -15,10 +15,11 @@
 </head>
 <body>
 	<div class="container">
+	<h5><a href="/">Back to Dashboard</a></h5>
 		<div class="row"> <!-- row covers both left Register and right Login -->
 			<div class="col-90"><!-- left side Register -->
 				<div class="form-group">
-					<h1>Edit data for User with Emails: ${user.email} ${user.getId()} ${user.userLocation} </h1>
+					<h1>Edit data for User with Email: ${user.email}, ID:  ${user.getId()} </h1>
 					<p class="bad">${registrationError}</p>
 					<form:form method="POST" action="/users/${user.getId()}/update" modelAttribute="user">
 						
